@@ -56,6 +56,7 @@ function play(id) {
     wav.load();
     var playPromise = wav.play();
     playPromise.then(_ => {
+        wav.playbackSpeed = Math.random() * 1.5;
         var b = Math.random() * Math.min(wav.duration, 9);
         wav.currentTime = Math.random() * (wav.duration - b);
         setTimeout(() => {
@@ -88,6 +89,7 @@ function mp4(id, callback) {
     }, false);
     var promise = vid.play();
     promise.then(_ => {
+        vid.playbackSpeed = Math.random() * 1.5;
         vid.play = function () {
             setTimeout(() => {
                 vid.pause();
