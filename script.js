@@ -125,7 +125,7 @@ var
     mp4s = 21,
     space = 0,
     pause = false;
-document.onkeyup = (e) => {
+document.onkeypressed = (e) => {
     if (e.key == "Space") {
         pause = pause ? false : true;
     }
