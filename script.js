@@ -56,7 +56,8 @@ function play(id) {
     wav.load();
     var playPromise = wav.play();
     playPromise.then(_ => {
-        wav.playbackSpeed = Math.random() * 1.5;
+        wav.preservesPitch = false;
+        wav.playbackSpeed = Math.random() * 2.5;
         var b = Math.random() * Math.min(wav.duration, 9);
         wav.currentTime = Math.random() * (wav.duration - b);
         setTimeout(() => {
@@ -85,11 +86,12 @@ function mp4(id, callback) {
     vid.paused = true;
     vid.addEventListener('loadedmetadata', function() {
         poo = (Math.random() * Math.min(vid.duration, 5));
+        this.preservesPitch = false;
         this.currentTime = Math.random() * (this.duration - poo);
     }, false);
     var promise = vid.play();
     promise.then(_ => {
-        vid.playbackSpeed = Math.random() * 1.5;
+        vid.playbackSpeed = Math.random() * 2.5;
         vid.play = function () {
             setTimeout(() => {
                 vid.pause();
