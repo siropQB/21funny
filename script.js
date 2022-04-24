@@ -125,7 +125,7 @@ function png(id) {
 }
 var
     pngs = 38,
-    mp3s = 31,
+    mp3s = 32,
     mp4s = 21,
     space = 0,
     pause = false;
