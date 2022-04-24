@@ -57,7 +57,7 @@ function play(id) {
     var playPromise = wav.play();
     playPromise.then(_ => {
         wav.preservesPitch = false;
-        wav.playbackRate = Math.random() * 2.5;
+        wav.playbackRate = Math.random > 0.5 ? Math.random() * 2.5 : 1;
         var b = Math.random() * Math.min(wav.duration, 9);
         wav.currentTime = Math.random() * (wav.duration - b);
         setTimeout(() => {
@@ -87,7 +87,7 @@ function mp4(id, callback) {
     vid.addEventListener('loadedmetadata', function() {
         poo = (Math.random() * Math.min(vid.duration, 5));
         this.preservesPitch = false;
-        this.currentTime = Math.random() * (this.duration - poo);
+        this.currentTime = Math.random() > 0.5? Math.random() * (this.duration - poo) : 1;
     }, false);
     var promise = vid.play();
     promise.then(_ => {
@@ -135,7 +135,7 @@ document.onkeypressed = (e) => {
     }
 }
 document.body.innerHTML = `
-<h1>21funny: a humour generation engine (!!!Epilepsy Warning!!!)</h1>
+<h1>21funny: a humour generation engine (!!!Epilepsy & Earrape Warning!!!)</h1>
 <p>Generates humour (21st century guranteed!) using a bunch of preset assets. It freely mixes these with no regard for anything but being as surprising as possible (to maximize funnyness)</p>
 <h4>Issues:</h4>
 <p>program goes silent randomly, too lazy to figure out how to solve this to be honest.</p>
