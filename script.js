@@ -133,7 +133,7 @@ document.onkeypressed = (e) => {
     }
 }
 document.body.innerHTML = `
-<h1>21funny: a humour generation engine</h1>
+<h1>21funny: a humour generation engine (!!!Epilepsy Warning!!!)</h1>
 <p>Generates humour (21st century guranteed!) using a bunch of preset assets. It freely mixes these with no regard for anything but being as surprising as possible (to maximize funnyness)</p>
 <h4>Issues:</h4>
 <p>program goes silent randomly, too lazy to figure out how to solve this to be honest.</p>
