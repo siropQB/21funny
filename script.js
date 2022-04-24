@@ -92,11 +92,11 @@ function mp4(id, callback) {
             setTimeout(() => {
                 vid.pause();
                 vid.src = "";
-                setTimeout(() => {
-                    callback();
-                }, Math.random() * 5000);
                 ctx2.clearRect(0,0,innerWidth,innerHeight);
             }, poo * 1000);
+            setTimeout(() => {
+                callback();
+            }, poo + ((Math.random() * 10000) - 5000));
             var $this = this; //cache
             (function loop() {
                 if (!$this.paused && !$this.ended) {
