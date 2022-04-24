@@ -122,4 +122,5 @@ document.body.innerHTML = `
 <h4>Issues:</h4>
 <p>program goes silent randomly, too lazy to figure out how to solve this to be honest.</p>
 <p>not enough material</p>
+<p>the images aren't loading in github, so the program is essentially useless at this point</p>
 <button onclick="start()">Begin</button>`;
