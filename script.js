@@ -1,12 +1,55 @@
-function sin(a) {
-    return (Math.sin(a) + 1) / 2;
+function start() {
+    document.body.innerHTML = `<canvas style="position:fixed;top:0px;left:0px;" width="${innerWidth}" height="${innerHeight}" id="canvas"></canvas><canvas style="position:fixed;top:0px;left:0px;" width="${innerWidth}" height="${innerHeight}" id="canvas2"></canvas><canvas style="position:fixed;top:0px;left:0px;" width="${innerWidth}" height="${innerHeight}" id="canvas3"></canvas>`;
+    ctx = document.getElementById("canvas").getContext("2d");
+    ctx3 = document.getElementById("canvas3").getContext("2d");
+    setInterval(() => {
+        if (!pause) {
+            play(
+                Math.floor(Math.random() * mp3s)
+            );
+        }
+    }, 2000);
+    setInterval(() => {
+        if (!pause) {
+            var
+                i = 0,
+                poopoo = Math.round(Math.random() * 10);
+            while (i < poopoo) {
+                var
+                    a = png(
+                        Math.floor(Math.random() * pngs)
+                    ),
+                    g = Math.random(),
+                    x = g > 0.75 ? 0 : Math.floor(Math.random() * 2) / 2 * innerWidth,
+                    y = g > 0.75 ? 0 : Math.floor(Math.random() * 2) / 2 * innerHeight,
+                    w = g > 0.75 ? innerWidth : innerWidth / 2,
+                    h = g > 0.75 ? innerHeight : innerHeight / 2;
+                a.onload = () => {
+                    ctx.drawImage(a, x, y, w, h);
+                }
+                i++;
+            }
+        }
+    }, 250);
+    ctx2 = document.getElementById("canvas2").getContext("2d");
+    (anus = function() {
+        if (!pause) {
+            mp4(Math.floor(Math.random() * mp4s), anus);
+        }
+    })();
+    setInterval(() => {
+        if (pause) {
+            ctx3.font = "Arial 20px";
+            ctx3.fillStyle = "#000000";
+            ctx3.fillRect(0, 0, innerWidth, innerHeight);
+            ctx3.drawText("Paused", 0, innerHeight);
+        } else {
+            ctx3.clearRect(0, 0, innerWidth, innerHeight);
+        }
+    });
 }
-function tan(a) {
-    return (Math.tan(a) + 1) / 2;
-}
-function cos(a) {
-    return (Math.cos(a) + 1) / 2;
-}
+
+
 function play(id) {
     if (id != id) id = 0;
     var wav = new Audio("https://siropqb.github.io/21funny/mp3s/" + id + ".mp3");
@@ -80,58 +123,6 @@ var
     pngs = 38,
     mp3s = 31,
     mp4s = 21,
-    gen = () => {
-        var time = new Date(). getTime();
-        play(
-            Math.floor(Math.random() * mp3s)
-        );
-    },
-    start = () => {
-        document.body.innerHTML = `<canvas style="position:fixed;top:0px;left:0px;" width="${innerWidth}" height="${innerHeight}" id="canvas"></canvas><canvas style="position:fixed;top:0px;left:0px;" width="${innerWidth}" height="${innerHeight}" id="canvas2"></canvas><canvas style="position:fixed;top:0px;left:0px;" width="${innerWidth}" height="${innerHeight}" id="canvas3"></canvas>`;
-        ctx = document.getElementById("canvas").getContext("2d");
-        ctx3 = document.getElementById("canvas3").getContext("2d");
-        setInterval(() => {
-            if (!pause) gen();
-        }, 2000);
-        setInterval(() => {
-            if (!pause) {
-                var 
-                    i = 0,
-                    poopoo = Math.round(Math.random() * 10);
-                while (i < poopoo) {
-                    var 
-                        a = png(
-                            Math.floor(Math.random() * pngs)
-                        ),
-                        g = Math.random(),
-                        x = g > 0.75 ? 0 : Math.floor(Math.random() * 2) / 2 * innerWidth,
-                        y = g > 0.75 ? 0 : Math.floor(Math.random() * 2) / 2 * innerHeight,
-                        w = g > 0.75 ? innerWidth : innerWidth / 2,
-                        h = g > 0.75 ? innerHeight : innerHeight / 2;
-                    a.onload = () => {
-                        ctx.drawImage(a,x,y,w,h);
-                    }
-                    i++;
-                }
-            }, 250);
-            ctx2 = document.getElementById("canvas2").getContext("2d");
-            (anus = function () {
-                if (!pause) {
-                    mp4(Math.floor(Math.random() * mp4s), anus);
-                }
-            })();
-            setInterval(() => {
-                if (pause) {
-                    ctx3.font = "Arial 20px";
-                    ctx3.fillStyle = "#000000";
-                    ctx3.fillRect(0,0,innerWidth,innerHeight);
-                    ctx3.drawText("Paused", 0, innerHeight);
-                } else {
-                    ctx3.clearRect(0,0,innerWidth,innerHeight);
-                }
-            });
-        }
-    },
     space = 0,
     pause = false;
 document.onkeyup = (e) => {
