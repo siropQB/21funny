@@ -30,7 +30,7 @@ function start() {
                 i++;
             }
         }
-    }, 250);
+    }, 1000);
     ctx2 = document.getElementById("canvas2").getContext("2d");
     (anus = function() {
         if (!pause) {
