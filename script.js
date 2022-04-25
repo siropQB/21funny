@@ -8,7 +8,7 @@ function start() {
                 Math.floor(Math.random() * mp3s)
             );
         }
-    }, 1000);
+    }, 500);
     setInterval(() => {
         if (!pause) {
             var
@@ -63,7 +63,7 @@ function play(id) {
         setTimeout(() => {
             wav.pause();
             wav.src = "";
-        }, 1000 + b * 1000);
+        }, (1000 + b * 1000) / wav.playbackRate);
     })
     .catch(error => {
         
@@ -97,7 +97,7 @@ function mp4(id, callback) {
                 vid.pause();
                 vid.src = "";
                 ctx2.clearRect(0,0,innerWidth,innerHeight);
-            }, poo * 1000);
+            }, (poo * 1000) / vid.playbackRate);
             setTimeout(() => {
                 callback();
             }, poo + ((Math.random() * 10000) - 5000));
