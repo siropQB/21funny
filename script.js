@@ -8,7 +8,7 @@ function start() {
                 Math.floor(Math.random() * mp3s)
             );
         }
-    }, 2000);
+    }, 1000);
     setInterval(() => {
         if (!pause) {
             var
